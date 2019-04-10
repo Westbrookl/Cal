@@ -1,0 +1,28 @@
+package 链表中倒数第k个结点;
+
+import java.util.Stack;
+
+public class Solution {
+	 public static ListNode FindKthToTail(ListNode head,int k) {
+		 if(head == null) return null;
+		 ListNode temp = head;
+		 Stack<ListNode> stack = new Stack<ListNode>();
+		 while(temp != null){
+			 stack.push(head);
+			 temp = temp.next;
+		 }
+		 int i=1;
+		 while(!stack.isEmpty()){
+			 if(i == k){
+				 return stack.pop();
+			 }else{		
+				 stack.pop();
+				 i++;
+			 }
+		 }
+		 return null;
+	 }
+	 public static void main(String[] args){
+		 
+	 }
+}

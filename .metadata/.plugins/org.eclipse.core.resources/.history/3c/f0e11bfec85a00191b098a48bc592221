@@ -1,0 +1,51 @@
+package 二分查找;
+/**
+ * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 
+ * 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
+ * @author jhc
+ *	
+ * 如果采用顺序查找的话，那么时间复杂度为O(n)
+ * 对于旋转数组来说，会分成为两个排序数组。可以采取二分查找
+ */
+public class Solution {
+	public static int binarySearch(int[] nums,int target){
+//		if(nums == null || nums.length == 0) return 0;
+//		int left = 0;
+//		int right = nums.length-1;
+//		int mid = 0;
+//		while(left <= right){
+//			mid = (left+right)/2;
+//			if(nums[mid] == target){
+//				return mid;
+//			}
+//			
+//			if(nums[mid] > target){
+//				right = mid-1;
+//			}else{
+//				left = mid+1;
+//			}
+//		}
+//		return -1;
+		if(nums == null || nums.length == 0) return 0;
+		int left = 0;
+		int right = nums.length-1;
+		int mid = 0;
+		while(left < right){
+			mid = (left+right)/2;
+			if(nums[mid] == target){
+				return mid;
+			}
+			if(nums[mid] > target){
+				right = mid-1;
+			}else{
+				left = mid+1;
+			}
+		}
+		return -1;
+	}
+	public static void main(String[] args){
+		int[] nums = {1,2,3,4,5};
+		int result = binarySearch(nums,2);
+		System.out.println(result);
+	}
+}

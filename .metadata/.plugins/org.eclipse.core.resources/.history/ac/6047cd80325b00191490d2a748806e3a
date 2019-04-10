@@ -1,0 +1,11 @@
+package 旋转数组中最小的元素;
+/**
+ * 
+ * @author jhc
+ *
+ */
+public class Solution1 {
+	public static int minNumberInRotateArray(int [] array) {
+		
+	}
+}

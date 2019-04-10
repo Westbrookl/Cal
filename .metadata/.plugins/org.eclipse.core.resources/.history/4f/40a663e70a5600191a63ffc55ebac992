@@ -1,0 +1,12 @@
+package 链表中倒数第k个结点;
+
+public class Solution {
+	 public ListNode FindKthToTail(ListNode head,int k) {
+		 if(head == null) return null;
+		 ListNode temp = head;
+		 Stack<ListNode> stack = new Stack<>();
+		 while(head != null){
+			 
+		 }
+	 }
+}
